@@ -96,8 +96,8 @@ namespace ServiceForLeaya
         // quotient of two complex numbers
         public static Complex operator /(Complex c1, Complex c2)
         {
-            if ((c2.real == 0.0f) &&
-            (c2.imaginary == 0.0f))
+            if ((c2.real == 0.0) &&
+            (c2.imaginary == 0.0))
                 throw new DivideByZeroException("Can't divide by zero Complex number");
 
             double newReal =
@@ -143,8 +143,10 @@ namespace ServiceForLeaya
             return Math.Sqrt(c1.real * c1.real + c1.imaginary * c1.imaginary);
         }
 
-
-
+        public static double arg(Complex z)
+        { 
+            return Math.Atan2(z.Imaginary, z.Real); 
+        }
 
     }
 }
